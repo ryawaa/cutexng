@@ -56,7 +56,6 @@
 
   input[type="checkbox"]:checked + label {
     color: var(--color-categories-item-selected-font);
-    border-bottom: 2px solid var(--color-categories-item-border-selected);
   }
 }
 
@@ -79,8 +78,15 @@ button.category_button {
   &.selected,
   &:active,
   &:focus-within {
-    color: var(--color-categories-item-selected-font);
-    border-bottom: 2px solid var(--color-categories-item-border-selected);
+    color: var(--color-footer-border);
+    background: var(--color-footer-background);
+    border-radius: 4px; 
+    padding: 0.25rem 0.5rem;
+  }
+
+  &.selected {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -132,7 +138,9 @@ button.category_button {
 }
 
 .search_box {
-  border-radius: 0.8rem;
+  border-radius: 0px;
+  overflow: hidden;
+  border: 1px solid var(--color-footer-border);
   width: @search-width;
   display: inline-flex;
   flex-direction: row;
@@ -169,6 +177,7 @@ html.no-js #clear_search.hide_if_nojs {
 
 #q,
 #send_search {
+  border-radius: 0px !important;
   display: block;
   margin: 0;
   padding: 0.8rem;
@@ -317,8 +326,13 @@ html.no-js #clear_search.hide_if_nojs {
   }
 
   .category_button {
-    padding: 1rem !important;
+    padding: 0.25rem 1rem !important; 
     margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
   }
 
   #search_view:focus-within {
@@ -377,6 +391,12 @@ html.no-js #clear_search.hide_if_nojs {
 
 #categories_container {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
 .favicon img {
