@@ -1,32 +1,21 @@
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
-----
-
-.. figure:: https://raw.githubusercontent.com/searxng/searxng/master/src/brand/searxng.svg
+.. figure:: https://raw.githubusercontent.com/ryawaa/cutexng/master/src/brand/searxng.svg
    :target: https://docs.searxng.org/
-   :alt: SearXNG
-   :width: 100%
+   :alt: cutexng
+   :width: 20%
    :align: center
 
 ----
 
-Privacy-respecting, hackable `metasearch engine`_
+A fork of SearXNG_ - a privacy-respecting, hackable `metasearch engine`_
 
-Searx.space_ lists ready-to-use running instances.
-
-A user_, admin_ and developer_ handbook is available on the homepage_.
-
-|SearXNG install|
-|SearXNG homepage|
-|SearXNG wiki|
-|AGPL License|
-|Issues|
-|commits|
-|weblate|
-|SearXNG logo|
+This fork is deployed on xng.cute.fm_ and is currently under development!
 
 ----
 
+.. _xng.cute.fm: https://xng.cute.fm
+.. _SearXNG: https://github.com/searxng/searxng
 .. _searx.space: https://searx.space
 .. _user: https://docs.searxng.org/user
 .. _admin: https://docs.searxng.org/admin
@@ -75,56 +64,24 @@ IRC
 Matrix
   `#searxng:matrix.org <https://matrix.to/#/#searxng:matrix.org>`_
 
+For CuteXNG related
+  `the mitten club @ discord <https://discord.gg/VWTTSWnfyy>`_ (dead)
 
-Setup
-=====
+Differences between SearXNG and CuteXNG
+=======================================
 
-- A well maintained `Docker image`_, also built for ARM64 and ARM/v7
-  architectures.
-- Alternatively there are *up to date* `installation scripts`_.
-- For individual setup consult our detailed `Step by step`_ instructions.
-- To fine-tune your instance, take a look at the `Administrator documentation`_.
+The main difference of SearXNG and CuteXNG is that CuteXNG tries to improve on the UI aspect of SearXNG while being cute. 
 
-.. _Administrator documentation: https://docs.searxng.org/admin/index.html
-.. _Step by step: https://docs.searxng.org/admin/installation-searxng.html
-.. _installation scripts: https://docs.searxng.org/admin/installation-scripts.html
-.. _Docker image: https://github.com/searxng/searxng-docker
-
-Translations
-============
-
-.. _Weblate: https://translate.codeberg.org/projects/searxng/searxng/
-
-Help translate SearXNG at `Weblate`_
-
-.. figure:: https://translate.codeberg.org/widgets/searxng/-/multi-auto.svg
-   :target: https://translate.codeberg.org/projects/searxng/
-
+I also do my best to be up to date from upstream so I don't miss patches!
 
 Contributing
 ============
 
+SearXNG contribution quickstart and documentation applies to this fork! See them below!
+
 .. _development quickstart: https://docs.searxng.org/dev/quickstart.html
 .. _developer documentation: https://docs.searxng.org/dev/index.html
 
-Are you a developer?  Have a look at our `development quickstart`_ guide, it's
+Have a look at our `development quickstart`_ guide, it's
 very easy to contribute.  Additionally we have a `developer documentation`_.
 
-
-Codespaces
-==========
-
-You can contribute from your browser using `GitHub Codespaces`_:
-
-- Fork the repository
-- Click on the ``<> Code`` green button
-- Click on the ``Codespaces`` tab instead of ``Local``
-- Click on ``Create codespace on master``
-- VSCode is going to start in the browser
-- Wait for ``git pull && make install`` to appear and then disappear
-- You have `120 hours per month`_ (see also your `list of existing Codespaces`_)
-- You can start SearXNG using ``make run`` in the terminal or by pressing ``Ctrl+Shift+B``
-
-.. _GitHub Codespaces: https://docs.github.com/en/codespaces/overview
-.. _120 hours per month: https://github.com/settings/billing
-.. _list of existing Codespaces: https://github.com/codespaces
