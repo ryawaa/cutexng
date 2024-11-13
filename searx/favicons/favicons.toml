@@ -6,13 +6,13 @@ cfg_schema = 1   # config's schema version no.
 
 # max_age = 5184000             # 60 days / default: 7 days (604800 sec)
 
-# [favicons.proxy.resolver_map]
+[favicons.proxy.resolver_map]
 #
 # The available favicon resolvers are registered here.
 #
-# "duckduckgo" = "searx.favicons.resolvers.duckduckgo"
+ "duckduckgo" = "searx.favicons.resolvers.duckduckgo"
 # "allesedv" = "searx.favicons.resolvers.allesedv"
-# "google" = "searx.favicons.resolvers.google"
+ "google" = "searx.favicons.resolvers.google"
 # "yandex" = "searx.favicons.resolvers.yandex"
 
 [favicons.cache]

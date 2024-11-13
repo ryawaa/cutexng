@@ -12,11 +12,11 @@
   .ltr-padding-right(2em);
   .ltr-padding-left(@results-offset - 3rem);
   margin: 0;
-  background: var(--color-header-background);
-  border-bottom: 1px solid var(--color-header-border);
+  background: var(--color-footer-background);
+  border-bottom: 1px solid var(--color-footer-border);
   display: grid;
   column-gap: 1.2rem;
-  row-gap: 1rem;
+  row-gap: 0.5rem;
   grid-template-columns: 3rem 1fr;
   grid-template-areas:
     "logo search"
@@ -27,7 +27,6 @@
 .category_button {
   display: inline-block;
   position: relative;
-  .ltr-margin-right(1rem);
   padding: 0;
 }
 
@@ -51,6 +50,7 @@
 
     div.category_name {
       margin: auto 0;
+
     }
   }
 
@@ -63,13 +63,15 @@ button.category_button {
   background-color: inherit;
   color: var(--color-base-font);
   cursor: pointer;
-  padding: 0.2rem 0;
+  padding: 0.25rem 0.5rem;
   display: inline-flex;
   align-items: center;
-  text-transform: capitalize;
+  text-transform: lowercase;
   font-size: 0.9em;
-  border: none;
-  border-bottom: 2px solid transparent;
+  border: 1px solid transparent;
+  &::before {
+    content: "/";
+  }
 
   svg {
     padding-right: 0.2rem;
@@ -79,20 +81,26 @@ button.category_button {
   &:active,
   &:focus-within {
     color: var(--color-footer-border);
-    background: var(--color-footer-background);
+    background: white;
     border-radius: 4px; 
+    border: 1px solid var(--color-footer-border);
     padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius:0;
   }
 
   &.selected {
-    font-weight: bold;
     padding: 0.25rem 0.5rem;
   }
 }
 
 #categories_container:has(button.category_button:focus-within) button.category_button.selected {
   color: var(--color-base-font);
-  border-bottom: none;
+  border: 1px solid var(--color-footer-border);
+  border-bottom: 1px solid transparent;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
 }
 
 #search_logo {
@@ -332,7 +340,6 @@ html.no-js #clear_search.hide_if_nojs {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2px;
   }
 
   #search_view:focus-within {
@@ -393,17 +400,17 @@ html.no-js #clear_search.hide_if_nojs {
   position: relative;
   display: flex;
   flex-direction: row;
-  gap: 2px;
+  gap:4px;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 1rem;
+
 }
 
 .favicon img {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 10%;
-  background-color: var(--color-favicon-background-color);
-  border: 1px solid var(--color-favicon-border-color);
+  background-color: none;
+  border: none;
   display: flex;
 }

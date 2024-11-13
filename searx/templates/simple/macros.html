@@ -20,16 +20,23 @@
 <!-- Draw result header -->
 {% macro result_header(result, favicons, image_proxify) -%}
 <article class="result {% if result['template'] %}result-{{ result.template|replace('.html', '') }}{% else %}result-default{% endif %} {% if result['category'] %}category-{{ result['category'] }}{% endif %}{% for e in result.engines %} {{ e }}{% endfor %}">
-  {{- result_open_link(result.url, "url_header") -}}
   {%- if favicon_resolver != "" %}
+  <div class="top_wrapper">
+
+
   <div class="favicon"><img loading="lazy" src="{{ favicon_url(result.parsed_url.netloc) }}"></div>
   {%- endif -%}
-  <div class="url_wrapper">
+  <div class="resultinfo_wrapper">
+    {{- result_sub_footer(result, proxify) -}}
+    <div class="url_wrapper">
     {%- for part in get_pretty_url(result.parsed_url) -%}
     <span class="url_o{{loop.index}}"><span class="url_i{{loop.index}}">{{- part -}}</span></span>
     {%- endfor %}
   </div>
-  {{- result_close_link() -}}
+  
+  </div>
+</div>
+
   {%- if result.thumbnail %}{{ result_open_link(result.url) }}<img class="thumbnail" src="{{ image_proxify(result.thumbnail) }}" title="{{ result.title|striptags }}" loading="lazy">{{ result_close_link() }}{% endif -%}
   <h3>{{ result_link(result.url, result.title|safe) }}</h3>
 {%- endmacro -%}
@@ -46,8 +53,10 @@
 <!-- Draw result sub footer -->
 {%- macro result_sub_footer(result, proxify) -%}
 <div class="engines">
+  <span>found in: </span>
   {% for engine in result.engines %}<span>{{ engine }}</span>{% endfor %}
-  {{ icon_small('ellipsis-vertical-outline') + result_link(cache_url + result.url, _('cached'), "cache_link") }}&lrm; {% if proxify and proxify_results %} {{ result_link(proxify(result.url), _('proxied'), "proxyfied_link") }} {% endif %}
+  <span> - </span>
+  {{ result_link(cache_url + result.url, _('view cached'), "cache_link") }}&lrm; {% if proxify and proxify_results %} {{ result_link(proxify(result.url), _('open proxy'), "proxyfied_link") }} {% endif %}
 </div>{{- '' -}}
 <div class="break"></div>{{- '' -}}
 {%- endmacro -%}
