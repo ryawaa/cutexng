@@ -53,9 +53,7 @@
         <a href="{{ url_for('info', pagename='about') }}" class="link_on_top_about">{{ icon_big('information-circle-outline') }}</a>
       {%- endblock -%}
       {%- block linkto_donate -%}
-        {%- if donation_url -%}
-        <a href="{{ donation_url }}" class="link_on_top_donate">{{ icon_big('heart-outline') }}</a>
-        {%- endif -%}
+        <a href="https://github.com/sponsors/ryawaa" class="link_on_top_donate">{{ icon_big('heart-outline') }}</a>
       {%- endblock -%}
       {%- block linkto_preferences -%}
         <a href="{{ url_for('preferences') }}" class="link_on_top_preferences">{{ icon_big('menu-outline') }}</a>
@@ -68,14 +66,15 @@
   </main>
   <footer class="footer_cutexng">
     <div class="footer_tagline">
-      cutexng - a cute searxng instance.
+      cutexng - a cute searxng[fork] instance.
     </div>
     <hr/>
     <div>
     {{ _('powered by') }} <a href="{{ url_for('info', pagename='about') }}">searxng</a> - hosted by 
     <a href="https://cute.fm">ryana </a> • <a href="mailto:xng@cute.fm">contact </a> 
-    • <a href="{{ searx_git_url }}">{{ _('source') }}</a>
-    {% if enable_metrics %}• <a href="{{ url_for('stats') }}">{{ _('stats') }}</a>{% endif %}
+    • <a href="https://status.cute.fm">status page </a> 
+    • <a href="https://github.com/ryawaa/cutexng">{{ _('source') }}</a>
+    {% if enable_metrics %}• <a href="{{ url_for('stats') }}">{{ _('engine stats') }}</a>{% endif %}
     {% if get_setting('brand.public_instances') %}
     • <a href="{{ get_setting('brand.public_instances') }}">{{ _('public instances') }}</a>
     {% endif %}
