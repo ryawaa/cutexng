@@ -36,8 +36,6 @@
   
   </div>
 </div>
-
-  {%- if result.thumbnail %}{{ result_open_link(result.url) }}<img class="thumbnail" src="{{ image_proxify(result.thumbnail) }}" title="{{ result.title|striptags }}" loading="lazy">{{ result_close_link() }}{% endif -%}
   <h3>{{ result_link(result.url, result.title|safe) }}</h3>
 {%- endmacro -%}
 

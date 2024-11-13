@@ -44,16 +44,14 @@
 
         {%- if infoboxes -%}
           <div id="infoboxes">
-            <details open class="sidebar-collapsable">
-              <summary class="title">{{ _('Info') }}</summary>
               {%- for infobox in infoboxes -%}
                 {%- include 'simple/elements/infobox.html' -%}
               {%- endfor -%}
-            </details>
+
           </div>
         {%- endif -%}
 
-        {%- if suggestions -%}
+        <!-- {%- if suggestions -%}
           {%- include 'simple/elements/suggestions.html' -%}
         {%- endif -%}
 
@@ -65,9 +63,9 @@
 
         {%- if search_formats -%}
           {%- include 'simple/elements/apis.html' -%}
-        {%- endif -%}
+        {%- endif -%} 
 
-        <div id="sidebar-end-collapsable"></div>
+        <div id="sidebar-end-collapsable"></div> -->
     </div>
 
     {% if corrections %}
