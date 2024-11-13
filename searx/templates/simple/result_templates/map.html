@@ -1,6 +1,7 @@
-{% from 'simple/macros.html' import result_header, result_sub_header, result_sub_footer, result_footer with context %}
+{% from 'simple/macros.html' import result_header,result_open_link,result_close_link,result_sub_header, result_sub_footer, result_footer with context %}
 {% from 'simple/icons.html' import icon_small %}
 
+<div class="content_wrapper">
 {{ result_header(result, favicons, image_proxify) -}}
 {{- result_sub_header(result) -}}
 
@@ -50,3 +51,5 @@
 {%- endif %}
 
 {{- result_footer(result) }}
+{%- if result.thumbnail %}{{ result_open_link(result.url) }}<img class="thumbnail" src="{{ image_proxify(result.thumbnail) }}" title="{{ result.title|striptags }}" loading="lazy">{{ result_close_link() }}{% endif -%}
+</div>

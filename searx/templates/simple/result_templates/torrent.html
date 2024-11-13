@@ -1,5 +1,6 @@
-{% from 'simple/macros.html' import result_header, result_sub_header, result_sub_footer, result_footer, result_link with context %}
+{% from 'simple/macros.html' import result_header, result_open_link, result_close_link, result_sub_header, result_sub_footer, result_footer, result_link with context %}
 
+<div class="content_wrapper">
 {{ result_header(result, favicons, image_proxify) -}}
 {{- result_sub_header(result) -}}
 
@@ -13,5 +14,6 @@
 {%- if result.files %}<p class="stat">{{ icon_big('file') }} {{ _('Number of Files') }} <span class="badge">{{ result.files }}</span></p>{% endif -%}
 
 {%- if result.content %}<p class="content">{{ result.content|safe }}</p>{% endif -%}
-{{- result_sub_footer(result, proxify) -}}
 {{- result_footer(result) }}
+{%- if result.thumbnail %}{{ result_open_link(result.url) }}<img class="thumbnail" src="{{ image_proxify(result.thumbnail) }}" title="{{ result.title|striptags }}" loading="lazy">{{ result_close_link() }}{% endif -%}
+</div>

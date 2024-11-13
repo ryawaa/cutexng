@@ -1,5 +1,6 @@
-{% from 'simple/macros.html' import result_header, result_sub_header, result_sub_footer, result_footer, result_link with context %}
+{% from 'simple/macros.html' import result_header, result_open_link, result_close_link, result_sub_header, result_sub_footer, result_footer, result_link with context %}
 
+<div class="content_wrapper">
 {{ result_header(result, favicons, image_proxify) -}}
 <div class="attributes">
   {%- if result.publishedDate %}<div class="result_publishedDate"><span>{{ _("Published date") }}:</span><span><time class="published_date" datetime="{{ result.pubdate }}" >{{ result.publishedDate }}</time></span></div>{% endif -%}
@@ -34,5 +35,6 @@
   {%- if result.html_url -%}{{ result_link(result.html_url, _('HTML')) }}{%- endif -%}
   {%- if result.doi %}{{ result_link('https://www.altmetric.com/details/doi/' + result.doi, 'Altmetric') }}{% endif -%}
 </p>
-{{- result_sub_footer(result, proxify) -}}
 {{- result_footer(result) }}
+{%- if result.thumbnail %}{{ result_open_link(result.url) }}<img class="thumbnail" src="{{ image_proxify(result.thumbnail) }}" title="{{ result.title|striptags }}" loading="lazy">{{ result_close_link() }}{% endif -%}
+</div>

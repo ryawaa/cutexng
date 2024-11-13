@@ -154,10 +154,6 @@ a {
   }
 }
 
-article[data-vim-selected] {
-  background: var(--color-result-vim-selected);
-  .ltr-border-left(0.2rem solid var(--color-result-vim-arrow));
-}
 
 article.result-images[data-vim-selected] {
   background: var(--color-result-vim-arrow);
@@ -174,27 +170,21 @@ article.result-images[data-vim-selected] {
   }
 }
 
-article[data-vim-selected].category-videos,
-article[data-vim-selected].category-news,
-article[data-vim-selected].category-map,
-article[data-vim-selected].category-music,
-article[data-vim-selected].category-files,
-article[data-vim-selected].category-social {
-  border: 1px solid var(--color-result-vim-arrow);
-  .rounded-corners;
-}
-
 .content_wrapper {
   display: flex;
   padding: @result-padding;
   flex-direction: row;
-  gap: 8px;
-  a {
-    min-width: fit-content;
-  }
+  gap: 16px;
   border: 1px solid var(--color-result-border);
   margin-bottom: 1rem;
   .rounded-corners;
+  > a {
+    width: 25%;
+    img.thumbnail {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }
 
 .result {
@@ -327,8 +317,6 @@ article[data-vim-selected].category-social {
   }
 
   img.thumbnail {
-
-    width: 7rem;
     height: unset; // remove heigth value that was needed for lazy loading
   }
 
@@ -397,16 +385,6 @@ article[data-vim-selected].category-social {
   content: "";
 }
 
-.category-videos,
-.category-news,
-.category-map,
-.category-music,
-.category-files,
-.category-social {
-  border: 1px solid var(--color-result-border);
-  margin: 0 @results-tablet-offset 1rem @results-tablet-offset !important;
-  .rounded-corners;
-}
 
 .category-social .image {
   width: auto !important;
@@ -1154,14 +1132,8 @@ img.thumbnail {
     margin: 2rem 1rem 0 1rem !important;
   }
 
-  article[data-vim-selected] {
-    border: 1px solid var(--color-result-vim-arrow);
-    .rounded-corners;
-  }
-
   .result {
     background: var(--color-result-background);
-    border: 1px solid var(--color-result-background);
     margin: 1rem 2%;
     width: 96%;
     .rounded-corners;
