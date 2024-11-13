@@ -72,6 +72,8 @@ Differences between SearXNG and CuteXNG
 
 The main difference of SearXNG and CuteXNG is that CuteXNG tries to improve on the UI aspect of SearXNG while being cute. 
 
+There's also oneko built in!
+
 I also do my best to be up to date from upstream so I don't miss patches!
 
 Contributing
