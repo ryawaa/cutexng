@@ -12,9 +12,7 @@
     <Param name="q" value="{searchTerms}" />
   </Url>
   {% endif %}
-  {% if autocomplete %}
-    <Url rel="suggestions" type="application/x-suggestions+json" method="{{ opensearch_method }}" template="{{ url_for('autocompleter', _external=True) }}?q={searchTerms}"/>
-  {% endif %}
+  <Url rel="suggestions" type="application/x-suggestions+json" method="{{ opensearch_method }}" template="{{ url_for('autocompleter', _external=True) }}?q={searchTerms}"/>
   <Url rel="self" type="application/opensearchdescription+xml"  method="{{ opensearch_method }}" template="{{ url_for('opensearch', _external=True) }}" />
   <Query role="example" searchTerms="cute.fm" />
   <moz:SearchForm>{{ url_for('search', _external=True) }}</moz:SearchForm>
